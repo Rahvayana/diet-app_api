@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\History;
 use App\Models\Product;
 use App\Models\Tip;
 use App\Models\User;
@@ -67,5 +68,29 @@ class ApiController extends Controller
             'status'=>200,
             'message'=>'Sukses'
         ]);
+    }
+
+    public function hitung(Request $request)
+    {
+        try{
+        $history=new History();
+        $history->id_user=$request->id_user;
+        $history->usia=$request->berat;
+        $history->tinggi=$request->tinggi;
+        $history->berat=$request->usia;
+        $history->indeks=$request->indeks;
+        $history->hasil=$request->hasil;
+        $history->keterangan=$request->keterangan;
+        $history->save();
+        return response()->json([
+            'status'=>200,
+            'message'=>'Sukses'
+        ]);
+      }catch(Exception $e){
+       return response()->json([
+           'status'=>500,
+           'message'=>$e->getMessage(),
+       ]);
+      }
     }
 }

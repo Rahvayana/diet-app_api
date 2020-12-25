@@ -19,6 +19,7 @@ $router->group(['prefix'=>'apps'],function() use ($router){
     $router->post('/register',[ApiController::class, 'register']);
     $router->post('/login',[ApiController::class, 'login']);
     $router->post('/home',[ApiController::class, 'home']);
+    $router->post('/hitung',[ApiController::class, 'hitung']);
     $router->get('/tips',[ApiController::class, 'tips']);
     $router->get('/produk',[ApiController::class, 'produk']);
     $router->get('/tentang',[ApiController::class, 'tentang']);
