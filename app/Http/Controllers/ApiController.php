@@ -35,6 +35,13 @@ class ApiController extends Controller
 
     public function register(Request $request)
     {
+        $validated = $request->validate([
+            'email' => 'required|email|unique:users',
+            'name' => 'required',
+            'password' => 'required',
+            'gender' => 'required',
+            'usia' => 'required',
+        ]);
        try{
         $user=new User();
         $user->name=$request->name;
