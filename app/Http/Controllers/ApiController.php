@@ -93,4 +93,15 @@ class ApiController extends Controller
        ]);
       }
     }
+
+    public function history(Request $request)
+    {
+        $id=$request->id_user;
+        $user=History::where('id_user',$id)->get();
+        return response()->json([
+            'data'=>$user,
+            'status'=>200,
+            'message'=>'Sukses'
+        ]);
+    }
 }
