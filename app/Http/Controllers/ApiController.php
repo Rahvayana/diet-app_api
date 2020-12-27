@@ -98,10 +98,6 @@ class ApiController extends Controller
     {
         $id=$request->id_user;
         $user=History::where('id_user',$id)->get();
-        return response()->json([
-            'data'=>$user,
-            'status'=>200,
-            'message'=>'Sukses'
-        ]);
+        return response($user);
     }
 }
