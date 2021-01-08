@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Diet;
 use App\Models\History;
 use App\Models\Product;
 use App\Models\Tip;
@@ -106,5 +107,18 @@ class ApiController extends Controller
         $id=$request->id_user;
         $user=History::where('id_user',$id)->get();
         return response($user);
+    }
+    
+    public function goldar($id)
+    {
+        $data=Diet::find($id);
+        return response($data);
+
+    }
+
+    public function getPost()
+    {
+        $data=Diet::where('type',1)->get();
+        return response($data);
     }
 }
