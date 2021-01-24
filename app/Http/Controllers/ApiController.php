@@ -106,7 +106,7 @@ class ApiController extends Controller
     public function history(Request $request)
     {
         $id=$request->id_user;
-        $user=History::where('id_user',$id)->get();
+        $user=History::where('id_user',$id)->where('type',$request->type)->get();
         return response($user);
     }
     
