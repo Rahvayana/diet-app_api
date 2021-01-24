@@ -90,6 +90,7 @@ class ApiController extends Controller
         $history->hasil=$request->hasil;
         $history->keterangan=$request->keterangan;
         $history->type=$request->type;
+        $history->blood=$request->blood;
         $history->save();
         return response()->json([
             'status'=>200,
