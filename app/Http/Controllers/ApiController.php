@@ -91,6 +91,7 @@ class ApiController extends Controller
         $history->keterangan=$request->keterangan;
         $history->type=$request->type;
         $history->blood=$request->blood;
+        $history->gender=$request->gender;
         $history->save();
         return response()->json([
             'status'=>200,
