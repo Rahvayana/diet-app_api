@@ -89,6 +89,7 @@ class ApiController extends Controller
         $history->indeks=$request->indeks;
         $history->hasil=$request->hasil;
         $history->keterangan=$request->keterangan;
+        $history->type=$request->type;
         $history->save();
         return response()->json([
             'status'=>200,
